@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PowerStation Exchange — MVP</title>
+<style>
+:root{--bg:#0f172a;--card:#1e293b;--acc:#38bdf8;--ok:#4ade80;--warn:#fbbf24;--err:#f87171;--txt:#e2e8f0;--mut:#94a3b8}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,Arial;background:var(--bg);color:var(--txt)}
+header{display:flex;align-items:center;gap:16px;padding:12px 20px;background:#0b1220;border-bottom:1px solid #24324d;flex-wrap:wrap}
+header h1{font-size:17px;margin:0;color:var(--acc)}
+nav{display:flex;gap:6px;flex-wrap:wrap}
+nav button{background:none;border:1px solid #33415c;color:var(--txt);padding:6px 12px;border-radius:8px;cursor:pointer;font-size:13px}
+nav button.active,nav button:hover{background:var(--acc);color:#04121f;border-color:var(--acc)}
+main{max-width:1100px;margin:20px auto;padding:0 16px}
+.card{background:var(--card);border:1px solid #2b3a55;border-radius:12px;padding:16px;margin-bottom:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+input,select,textarea{width:100%;padding:9px;border-radius:8px;border:1px solid #33415c;background:#0b1220;color:var(--txt);margin:4px 0}
+label{font-size:12px;color:var(--mut)}
+.btn{background:var(--acc);color:#04121f;border:none;padding:9px 16px;border-radius:8px;cursor:pointer;font-weight:600;margin-top:8px}
+.btn.red{background:var(--err)}.btn.green{background:var(--ok)}.btn.gray{background:#475569;color:#fff}
+.badge{display:inline-block;padding:2px 9px;border-radius:20px;font-size:11px;background:#33415c}
+.badge.ok{background:#14532d}.badge.warn{background:#713f12}.badge.err{background:#7f1d1d}
+table{width:100%;border-collapse:collapse;font-size:13px}td,th{padding:6px 8px;border-bottom:1px solid #2b3a55;text-align:left}
+.mut{color:var(--mut);font-size:12px}.money{color:var(--ok);font-weight:600}pre{white-space:pre-wrap;font-size:12px;background:#0b1220;padding:12px;border-radius:8px;max-height:420px;overflow:auto}
+#toast{position:fixed;bottom:18px;right:18px;background:#134e4a;border:1px solid var(--ok);padding:12px 16px;border-radius:10px;display:none;max-width:420px;z-index:9}
+.hidden{display:none}
+</style>
+</head>
+<body>
+<header>
+  <h1>⚡ PowerStation Exchange <span class="mut">MVP</span></h1>
+  <nav id="nav"></nav>
+  <div style="margin-left:auto"><span id="whoami" class="mut"></span> <button class="btn gray" onclick="logout()">Выйти</button></div>
+</header>
+<main id="main"></main>
+<div id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>
